@@ -1,0 +1,8 @@
+**RULES TO SOLVE THE PATTERNS**
+
+NOTE: patterns problems usually have nested loops
+
+1- for the outer loop, count the number of rows
+2- for the inner loop, count the number of cols and connect them somehow to the rows
+3- print the '*' inside the inner loop
+4- observe symmetry (optional)
