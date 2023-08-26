@@ -187,12 +187,152 @@ void print16(int n){
 	}
 }
 
+void print17(int n){
+	for(int i=0; i<n; i++){
+		//space
+	for(int j =0; j<n-1-i; j++){
+    	cout << " ";
+	}
+	//character
+	char ch = 'A';
+	int breakPoint = (2*i+1)/2;
+	for(int j =1; j<=2*i+1; j++){
+		cout << ch;
+		if(j<=breakPoint) ch++;
+		else ch--;
+	}
+
+	//space
+	for(int j =0; j<n-1-i; j++){
+		cout << " ";
+	}
+	cout<< endl;
+	}
+}
+
+void print18(int n){
+for(int i=0; i<n; i++){
+	for(char ch ='E'-i; ch<='E'; ch++){
+		cout <<ch<<" ";
+	}
+cout << endl;
+}
+}
+
+void print19(int n){
+	int iniS =0;
+	for(int i =0; i< n; i++){
+		//stars
+		for(int j =1; j<=n-i; j++){
+			cout << "*";
+		}
+		//spaces
+		for(int j=0; j<iniS; j++){
+			cout << " ";
+		}
+		//stars
+		for(int j =1; j<=n-i; j++){
+			cout << "*";
+		}
+		iniS += 2;
+		cout << endl;
+	}
+	iniS =8;
+	for(int i =1; i<=n; i++){
+		//stars
+		for(int j =1; j<=i; j++){
+			cout << "*";
+		}
+		//spaces
+		for(int j=0; j<iniS; j++){
+			cout << " ";
+		}
+		//stars
+		for(int j =1; j<=i; j++){
+			cout << "*";
+		}
+		iniS -= 2;
+		cout << endl;
+
+	}
+}
+
+void print20(int n){
+	int iniS =8;
+	for(int i=0; i<n; i++){
+		//stars
+		for(int j=1; j<=i+1; j++){
+			cout << "*";
+		}
+		//spaces
+		for(int j=1; j<=iniS; j++){
+			cout << " ";
+		}
+		//stars
+		for(int j=1; j<=i+1; j++){
+			cout << "*";
+		}
+		iniS -=2;
+		cout << endl;
+	}
+}
+
+void print21(int n){
+	int spaces = 2*n-2;
+	for (int i=1; i<=2*n-1; i++){
+		int stars = i;
+		if(i>n) stars = 2*n-1;
+		//stars
+		for(int j=1; j<=stars; j++){
+			cout << "*";
+		}
+		//spaces
+		for (int j =1; j<=spaces; j++){
+			cout << " ";
+		}
+		//stars
+		for(int j=1; j<=stars; j++){
+			cout << "*";
+		}
+		cout << endl;
+		if(i<n) spaces -=2;
+		else spaces +=2;
+	}
+}
+
+void print22(int n){
+	for(int i=0; i<n; i++){
+		for(int j=0; j<n; j++){
+			if(i==0 || j==0|| i==n-1|| j==n-1){
+				cout << "* ";
+			}
+			else cout << "  ";
+		}
+		cout << endl;
+	}
+
+}
+
+void print23(int n){
+	for(int i=0; i<2*n-1; i++){
+		for (int j=0; j<2*n-1; j++){
+			int top=i;
+			int left = j;
+			int right = (2*n -2)-j;
+			int down = (2*n-2)-i;
+			cout << (n -min(min(top, down), min(left, right)));
+		}
+		cout << endl;
+	}
+
+}
+
 int main() {
 	int t;
 	cin >> t;
 	for(int i=0; i<t; i++){
 		int n;
 		cin >> n;
-		print16(n);
+		print23(n);
 	}
 }
